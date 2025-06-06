@@ -117,6 +117,17 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 <details>
 <summary><strong>Step 6: Create two organization units (Dev-Test) and Prod</strong></summary>
+
+<br>
+
+| Step | Description                                                                                                                                                       | Screenshot |
+|:-----|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| 1    | Log in to General AWS Account as IAM User, go to **`AWS Organization`**  select the root organization and create a new **`Organizational Unit`** named `dev-test` |![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/47-create-dev-test-org-unit.jpg) |
+| 2    | Similarly create another organization unit named `prod`                                                                                                           |![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/48-create-prod-org-unit.jpg)|
+| 3    | Move the development and test accounts under `dev-test` org unit and production account under `prod` org unit                                                     |![Step 3](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/49-move-accounts-to-org-unit.jpg)|
+| 4    | Enable service control and tag policies                                                                                                                           |![Step 4](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/50-enable-scp-and-tag-policy.jpg)|
+| 5    | Service control and tag policies enableld                                                                                                                         |![Step 5](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/51-scp-and-tag-policy-enabled.jpg)|
+
 </details>
 
 <details>
