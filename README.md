@@ -56,3 +56,31 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 | 30   | Add MFA to IAM admin user                     | ![Step 30](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/30-add-mfa-for-iamadmin-user.jpg) |
 
 </details>
+
+<details>
+<summary><strong>Step 2: Create an AWS Management (Development) Account</strong></summary>
+</details>
+
+<details>
+<summary><strong>Step 3: Create an AWS Organization using Management account</strong></summary>
+</details>
+
+<details>
+<summary><strong>Step 4: Invite Development account to join the organization</strong></summary>
+</details>
+
+<details>
+<summary><strong>Step 5: Create Staging and Production accounts within the Organization</strong></summary>
+</details>
+
+<details>
+<summary><strong>Step 6: Create two organization units (Dev-Test) and Prod</strong></summary>
+</details>
+
+<details>
+<summary><strong>Step 7: Configure Service Control Policy</strong></summary>
+</details>
+
+<details>
+<summary><strong>Step 8: Configure Tag Policy</strong></summary>
+</details>
