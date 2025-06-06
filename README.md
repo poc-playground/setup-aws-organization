@@ -90,18 +90,29 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 | Step | Description                                                                  | Screenshot |
 |:-----|:-----------------------------------------------------------------------------|:-----------|
-| 1    | Log in to General AWS Account as IAM User, go to **`AWS Organization --> Invitations`**             |![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/36-invite-development-account.jpg) |
-| 2    | Send an invitation to the development account to join the organization                           |![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/37-send-an-invitation.jpg)|
-| 3    | Log into development account and view the invitation |![Step 3](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/38-view-invitation.jpg)|
-| 4    | Accept the invitation to join the organization |![Step 4](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/39-accept-invitation.jpg)|
-| 5    | A conformation is displayed |![Step 5](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/40-confirmation-displayed.jpg)|
-| 6    | The development account is shown as a member account in the organization|![Step 6](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/41-development-accounts-joins-the-org.jpg)|
+| 1    | Log in to General AWS Account as IAM User, go to **`AWS Organization`**      |![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/36-invite-development-account.jpg) |
+| 2    | Select the option to create a new account                                    |![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/37-send-an-invitation.jpg)|
+| 3    | Log into development account and view the invitation                         |![Step 3](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/38-view-invitation.jpg)|
+| 4    | Accept the invitation to join the organization                               |![Step 4](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/39-accept-invitation.jpg)|
+| 5    | A conformation is displayed                                                  |![Step 5](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/40-confirmation-displayed.jpg)|
+| 6    | The development account is shown as a member account in the organization     |![Step 6](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/41-development-accounts-joins-the-org.jpg)|
 
 
 </details>
 
 <details>
 <summary><strong>Step 5: Create Staging and Production accounts within the Organization</strong></summary>
+
+<br>
+
+| Step | Description                                                                                           | Screenshot |
+|:-----|:------------------------------------------------------------------------------------------------------|:-----------|
+| 1    | Log in to General AWS Account as IAM User, go to **`AWS Organization`**                               |![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/42-create-a-staging-aws-account.jpg) |
+| 2    | Select the option to create a staging (test) AWS Account, fill in the details and create the account  |![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/43-create-a-staging-aws-account.jpg)|
+| 3    | A new account gets created and added to the organization                                              |![Step 3](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/44-create-a-staging-aws-account.jpg)|
+| 4    | Repeat the step to create a production AWS account                                                    |![Step 4](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/45-create-a-production-aws-account.jpg)|
+| 5    | The AWS organization is setup with management, development, staging and production accounts           |![Step 5](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/46-aws-organization-structure.jpg)|
+
 </details>
 
 <details>
