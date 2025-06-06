@@ -1,3 +1,22 @@
+# AWS Organization Setup Guide
+
+This guide provides step-by-step instructions to create an AWS Organization, set up Organizational Units (OUs), and provision new AWS accounts using the AWS Management Console.
+
+---
+
+## 🧰 Prerequisites
+
+- Access to an email account with support for dynamic alias.
+- A valid credit card.
+- A virtual MFA device (1Password has been used in this setup)
+
+
+---
+
+## 🏗️ Step-by-Step Instructions
+
+### 1. Create an AWS Management (General) Account
+
 <details>
 <summary><strong>Step 1: Create an AWS Management (General) Account</strong></summary>
 
