@@ -15,7 +15,7 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 ## 🏗️ Step-by-Step Instructions
 
-### 1. Create an AWS Management (General) Account
+
 
 <details>
 <summary><strong>Step 1: Create an AWS Management (General) Account</strong></summary>
