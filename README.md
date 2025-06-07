@@ -131,8 +131,42 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 </details>
 
 <details>
-<summary><strong>Step 7: Configure Service Control Policy</strong></summary>
+<summary><strong>Step 7: Enhance the Organization Structure by following the best practices</strong></summary>
+
+<br>
+
+```mermaid
+graph TD
+  Org["AWS Organization Root"]
+
+  Org --> Core["OU: Core"]
+  Org --> Workloads["OU: Workloads"]
+
+  Workloads --> DevTest["OU: Dev-Test"]
+  Workloads --> Prod["OU: Prod"]
+
+  %% Core Accounts
+  Core --> Mgmt["Account: Management (Root)"]
+  Core --> Identity["Account: Identity"]
+  Core --> LogArchive["Account: Log Archive"]
+
+  %% Workload Accounts
+  DevTest --> Dev["Account: Development"]
+  DevTest --> Test["Account: Test"]
+  Prod --> Production["Account: Production"]
+```
+
+![Final Org Structure](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/52-final-org-structure.jpg)
 </details>
+
+<details>
+<summary><strong>Step 8: Configure Service Control Policy - Management Account</strong></summary>
+</details>
+
+<details>
+<summary><strong>Step 9: Configure Service Control Policy - Identity Account</strong></summary>
+</details>
+
 
 <details>
 <summary><strong>Step 8: Configure Tag Policy</strong></summary>
