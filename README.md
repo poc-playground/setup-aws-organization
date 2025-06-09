@@ -141,7 +141,7 @@ graph TD
   Sandboxes --> Test["Account: Test"]
 
 ````
-| **3. Final Org Structure** <br>![Final Org Structure](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/52-final-org-structure.jpg)|
+**3. Final Org Structure** <br>![Final Org Structure](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/52-final-org-structure.jpg)|
 </details>
 
 <details>
