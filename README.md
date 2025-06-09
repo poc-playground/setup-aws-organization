@@ -22,7 +22,7 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 <br>
 
-| Step |
+| Steps |
 |:-----|
 | **1. Sign up for a general AWS account**<br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/01-sign-up-general-account.jpg) |
 | **2. Verify your email address**<br>![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/02-verify-email.jpg) |
@@ -62,7 +62,7 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 <br>
 
-| Step |
+| Steps |
 |:-----|
 | **1 . Sign up for a general AWS account**<br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/31-sign-up-for-development-account.jpg) |
 | **2 . Create IAM Admin user and setup MFA**<br>![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/32-create-iam-admin-user-for-development-account.jpg)|
@@ -75,8 +75,8 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 <br>
 
-| Step | Description                                                               . Screenshot |
-|:-----|:-----------------------------------------------------------------------------|:-----------|
+| Steps|
+|:-----------------------------------------------------------------------------|
 | **1. Log in to General AWS Account as IAM User (Administrator Access)**<br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/33-log-in-to-general-action-as-iam-user.jpg) |
 | **2. Accept the disclairmer and create the organization.**<br>![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/34-create-aws-organization.jpg)|
 | **3. An organization gets created with the management account as the root account**.<br>![Step 3](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/35-aws-organization-created.jpg)|
@@ -88,7 +88,7 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 <br>
 
-| Step |
+| Steps |
 |:-----|
 | **1. Log in to General AWS Account as IAM User, go to `AWS Organization`** <br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/36-invite-development-account.jpg) |
 | **2. Select the option to create a new account**<br>![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/37-send-an-invitation.jpg)|
@@ -105,7 +105,7 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 <br>
 
-| Step |
+| Steps |
 |:-----|
 | **1. Log in to General AWS Account as IAM User, go to `AWS Organization`** <br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/42-create-a-staging-aws-account.jpg) |
 | **2. Select the option to create a staging (test) AWS Account, fill in the details and create the account**<br>![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/43-create-a-staging-aws-account.jpg)|
@@ -122,19 +122,8 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 | Step | 
 |:-----|
-| **1. Log in to General AWS Account as IAM User, go to `AWS Organization` select the root organization and create a new `Organizational Unit` named `Sandboxes`** <br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/47-create-dev-test-org-unit.jpg) |
-| **2. Similarly create another organization unit named `Prod`**<br>![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/48-create-prod-org-unit.jpg)|
-| **3. Move the development and test accounts under `dev-test` org unit and production account under `Prod` org unit**<br>![Step 3](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/49-move-accounts-to-org-unit.jpg)|
-| **4. Enable service control and tag policies**<br>![Step 4](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/50-enable-scp-and-tag-policy.jpg)|
-| **5. Service control and tag policies enableld**<br>![Step 5](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/51-scp-and-tag-policy-enabled.jpg)|
-
-</details>
-
-<details>
-<summary><strong>Step 7: Enhance the Organization Structure by following the best practices</strong></summary>
-
-<br>
-
+| **1. Log in to General AWS Account as IAM User, go to `AWS Organization` select the root organization and create a three Organizational Units named `Security`, `Sandboxes` and `Production`. Move the Development and Test accounts under Sanboxes org unit. Create three additional accounts for `Audit`, '`Identity` and `Log Archive` and move them along with the `Management` account under the `Security` org unit.** <br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/47-create-dev-test-org-unit.jpg)|
+| **2. The outline of the AWS Organization will be as follows.** <br>
 ```mermaid
 graph TD
   OrgRoot["AWS Organization Root"]
@@ -151,16 +140,12 @@ graph TD
   Sandboxes --> Development["Account: Development"]
   Sandboxes --> Test["Account: Test"]
 
-  Prod --> Production["Account: Production"]
-
-
-```
-
-![Final Org Structure](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/52-final-org-structure.jpg)
+````
+| **3. Final Org Structure** <br>![Final Org Structure](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/52-final-org-structure.jpg)|
 </details>
 
 <details>
-<summary><strong>Step 9: Setup Landing Zone using AWS Control Tower</strong></summary>
+<summary><strong>Step 7: Setup Landing Zone using AWS Control Tower</strong></summary>
 </details>
 
 <details>
