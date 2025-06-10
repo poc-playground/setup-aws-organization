@@ -13,9 +13,27 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 ---
 
+## The outline of the AWS Organization.
+
+```mermaid
+graph TD
+  OrgRoot["AWS Organization Root"]
+
+  OrgRoot --> Security["OU: Security"]
+  OrgRoot --> Sandbox["OU: Sandbox"]
+  OrgRoot --> Prod["OU: Prod"]
+
+  OrgRoot --> Audit["Account: Audit"]
+  OrgRoot --> Billing["Account: Billing / General"]
+  OrgRoot --> Identity["Account: Identity"]
+  OrgRoot --> LogArchive["Account: Log Archive"]
+
+  Sandbox --> Development["Account: Development"]
+  Sandbox --> Test["Account: Test"]
+  Prod --> Production["Account: Production"]
+````
+
 ## 🏗️ Step-by-Step Instructions
-
-
 
 <details>
 <summary><strong>Step 1: Create an AWS Management (General) Account</strong></summary>
@@ -99,9 +117,9 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 
 - **Log in to General AWS Account as IAM User, go to `AWS Organization`**.<br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/42-create-a-staging-aws-account.jpg)
 - **Select the option to create a `Test` (Staging) AWS Account, fill in the details and create the account.**<br>![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/43-create-a-staging-aws-account.jpg)
-- **A new account gets created and added to the organization.**<br>![Step 3](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/44-create-a-staging-aws-account.jpg)
-- **Repeat the step to create a `Production` AWS account.**<br>![Step 4](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/45-create-a-production-aws-account.jpg)
-- **The AWS organization is setup with management, development, staging and production accounts**<br>![Step 5](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/46-aws-organization-structure.jpg)
+- **A new account gets created and added to the organization.**<br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/44-create-a-staging-aws-account.jpg)
+- **Repeat the step to create a `Production` AWS account.**<br>![Step 2](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/45-create-a-production-aws-account.jpg)
+- **The AWS organization is setup with management, development, staging and production accounts**<br>![Step 3](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/46-aws-organization-structure.jpg)
 
 </details>
 
@@ -111,42 +129,39 @@ This guide provides step-by-step instructions to create an AWS Organization, set
 <br>
 
 - **Log in to General AWS Account as IAM User, go to `AWS Organization` select the root organization and create a two Organizational Units named `Sanbox` and `Production`. Move the Development and Test accounts under Sanbox org unit. Create three additional accounts for `Audit`, '`Identity` and `Log Archive`.**<br>![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/47-create-dev-test-org-unit.jpg)
-- **The outline of the AWS Organization will be as follows.** <br>
-```mermaid
-graph TD
-  OrgRoot["AWS Organization Root"]
 
-  OrgRoot --> Security["OU: Security"]
-  OrgRoot --> Sandbox["OU: Sandbox"]
-  OrgRoot --> Prod["OU: Prod"]
-
-  OrgRoot --> Audit["Account: Audit"]
-  OrgRoot --> Billing["Account: Billing / General"]
-  OrgRoot --> Identity["Account: Identity"]
-  OrgRoot --> LogArchive["Account: Log Archive"]
-
-  Sandbox --> Development["Account: Development"]
-  Sandbox --> Test["Account: Test"]
-  Prod --> Production["Account: Production"]
-
-````
 - **Final Org structure**
 ![Final Org Structure](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/52-final-org-structure.jpg)
 </details>
 
 <details>
 <summary><strong>Step 7: Setup Landing Zone using AWS Control Tower</strong></summary>
+
+- **Log in as Admin user in the Management account go to `AWS Control Tower` console** <br> ![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/53-setup-landing-zone.jpg)
+- **Select defaut and additional regions for governance** <br> ![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/54-setup-landing-zone.jpg)
+- **Select foundation and additional OU** <br> ![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/55-setup-landing-zone.jpg)
+- **Configure shared accounts (`Log Archive` and `Audit`). Use the existing accounts created in the earlier steps** <br> ![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/56-setup-landing-zone.jpg)
+- **Enable `CloudTrail` configuration and skip `AWS Backup`** <br> ![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/57-setup-landing-zone.jpg)
+- **Review the selected options and setup landing zone** <br> ![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/58-setup-landing-zone.jpg)
+- **Once the Landing Zone setup is complete, the details are displayed in the Control Tower dashboard.** <br> ![Step 1](https://subhamay-github-images-devl-us-east-1.s3.us-east-1.amazonaws.com/aws-organization-setup/59-setup-landing-zone.jpg)
+
+</details>
+
+
+<details>
+<summary><strong>Step 8: Configure AWS Single Sign-on (SSO)</strong></summary>
+</details>
+
+
+<details>
+<summary><strong>Step 9: Configure Service Control Policy - Management Account</strong></summary>
 </details>
 
 <details>
-<summary><strong>Step 8: Configure Service Control Policy - Management Account</strong></summary>
-</details>
-
-<details>
-<summary><strong>Step 9: Configure Service Control Policy - Identity Account</strong></summary>
+<summary><strong>Step 10: Configure Service Control Policy - Identity Account</strong></summary>
 </details>
 
 
 <details>
-<summary><strong>Step 8: Configure Tag Policy</strong></summary>
+<summary><strong>Step 11: Configure Tag Policy</strong></summary>
 </details>
